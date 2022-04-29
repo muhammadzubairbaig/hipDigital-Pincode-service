@@ -11,13 +11,13 @@ import { FullComponent } from './layouts/full/full.component';
 import { DemoFlexyModule } from './demo-flexy-module'
 
 // Modules
-import { DashboardModule } from './dashboard/dashboard.module';
-import { ComponentsModule } from './components/components.module';
+import { FormsComponent } from './component/forms/forms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FullComponent
+    FullComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
@@ -25,8 +25,6 @@ import { ComponentsModule } from './components/components.module';
     BrowserAnimationsModule,
     FeatherModule.pick(allIcons),
     DemoFlexyModule,
-    DashboardModule,
-    ComponentsModule,
     FormsModule
   ],
   providers: [],
