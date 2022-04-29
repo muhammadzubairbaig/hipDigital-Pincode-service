@@ -11,13 +11,13 @@ import { FullComponent } from './layouts/full/full.component';
 import { DemoFlexyModule } from './demo-flexy-module'
 
 // Modules
-import { FormsComponent } from './component/forms/forms.component';
+import { CreatePinCodeComponent } from './component/create-pincode/create-pincode.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
-    FormsComponent
+    CreatePinCodeComponent
   ],
   imports: [
     BrowserModule,

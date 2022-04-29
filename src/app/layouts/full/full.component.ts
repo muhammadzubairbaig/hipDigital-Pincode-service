@@ -30,9 +30,9 @@ export class FullComponent {
 
   sidebarMenu: sidebarMenu[] = [
     {
-      link: "/home",
-      icon: "home",
-      menu: "Create Pincode",
+      link: "/forms",
+      icon: "disc",
+      menu: "Pincode",
     },
     {
       link: "/button",
@@ -69,11 +69,11 @@ export class FullComponent {
       icon: "award",
       menu: "Table",
     },
-    {
-      link: "/forms",
-      icon: "list",
-      menu: "Forms",
-    },
+    // {
+    //   link: "/forms",
+    //   icon: "list",
+    //   menu: "Forms",
+    // },
   ]
 
 }
