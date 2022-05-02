@@ -12,12 +12,14 @@ import { DemoFlexyModule } from './demo-flexy-module'
 
 // Modules
 import { CreatePinCodeComponent } from './component/create-pincode/create-pincode.component';
+import { CreatePinCodeSerialComponent } from './component/create-pincode-serial/create-pincode-serial.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
-    CreatePinCodeComponent
+    CreatePinCodeComponent,
+    CreatePinCodeSerialComponent
   ],
   imports: [
     BrowserModule,

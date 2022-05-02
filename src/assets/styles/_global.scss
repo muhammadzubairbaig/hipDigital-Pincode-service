@@ -238,6 +238,6 @@ ul {
   opacity: 0.5;
 }
 
-.mat-checkbox-background{
-  background: $primary !important;
+.mat-checkbox-checked .mat-checkbox-background{
+  background-color: $primary !important;
 }

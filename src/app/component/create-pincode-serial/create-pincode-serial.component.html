@@ -1,0 +1,73 @@
+<!-- Form Layout -->
+<div class="card">
+  <div class="card-body">
+    <h4 class="mb-32">Create Pincode</h4>
+    <form>
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Pincode Quality</mat-label>
+        <input matInput type="text" value="Nirav Joshi" placeholder="Enter your pincode Quality" name="pincodeQuality"
+          [(ngModel)]="pincodeQuality">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Character Quality</mat-label>
+        <input matInput type="text" [(ngModel)]="characterQuality" placeholder="Enter your character quality"
+          name="characterQuality">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Pincode Group Name</mat-label>
+        <input matInput type="text" [(ngModel)]="pincodeGroupName" placeholder="Enter your group name"
+          name="pincodeGroupName">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Site</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Start Serial Number (inclusive)</mat-label>
+        <input matInput type="text" [(ngModel)]="startSerialNum" name="startSerialNum">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Downloads per Pincode</mat-label>
+        <input matInput type="text" [(ngModel)]="downloadPerPincode" name="downloadPerPincode">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label> Start Date</mat-label>
+        <input matInput type="date" [(ngModel)]="startDate" name="startDate">
+      </mat-form-field>
+
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput type="date" [(ngModel)]="endDate" name="endDate">
+      </mat-form-field>
+
+      <mat-form-field class="w-100 fs-16" appearance="outline">
+        <mat-label>Pin Type</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <section class="fs-16 mb-32">
+          <mat-label>QA Pincode</mat-label>
+        <mat-checkbox color="primary" [checked]="markedasTestPincode" name="markedasTestPincode" class="d-block mb-16">
+          Marked as Test Pincode?</mat-checkbox>
+        </section>
+
+
+      <button mat-button class="btn btn-primary fw-normal" (click)="onSubmit()" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

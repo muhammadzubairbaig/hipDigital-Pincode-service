@@ -30,12 +30,12 @@ export class FullComponent {
 
   sidebarMenu: sidebarMenu[] = [
     {
-      link: "/forms",
+      link: "/pincode",
       icon: "disc",
       menu: "Pincode",
     },
     {
-      link: "/button",
+      link: "/create-pincode-serial",
       icon: "disc",
       menu: "Create Pincode with Serial Number",
     },
