@@ -1,0 +1,41 @@
+.table-responsive {
+  overflow-x: auto;
+}
+
+td.mat-cell {
+  padding: 16px;
+}
+
+th.mat-header-cell:first-of-type,
+td.mat-cell:first-of-type,
+td.mat-footer-cell:first-of-type {
+  padding: 16px;
+}
+
+th.mat-header-cell {
+  padding: 16px;
+}
+
+.mat-header-cell {
+  font-size: 14px;
+}
+
+.pt-10{
+  padding-top: 1.7em;
+}
+.m-right-10{
+  margin-right: 10px;
+}
+.m-right-3{
+  margin-right: 3px;
+}
+.height-36{
+  height: 36px;
+}
+.btn-no{
+  border: none;
+  background: transparent;
+  padding: 0px;
+  margin-top: -40px;
+  font-size: 20px;
+}

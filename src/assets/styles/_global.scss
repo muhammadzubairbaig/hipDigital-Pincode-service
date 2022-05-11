@@ -241,3 +241,12 @@ ul {
 .mat-checkbox-checked .mat-checkbox-background{
   background-color: $primary !important;
 }
+.cdk-foucsed,.primary-color{
+  background-color: #233242 !important;
+  transition: all 0.4s ease-in-out !important;
+  color: #fff !important;
+}
+
+.pointer{
+  cursor: pointer;
+}

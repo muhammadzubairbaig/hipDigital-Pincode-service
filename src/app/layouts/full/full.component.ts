@@ -40,12 +40,12 @@ export class FullComponent {
       menu: "Create Pincode with Serial Number",
     },
     {
-      link: "/alerts",
+      link: "/activate-pincode",
       icon: "info",
       menu: "Activate Pincode with Serial Number",
     },
     {
-      link: "/grid-list",
+      link: "/get-pincode-list",
       icon: "file-text",
       menu: "Promotion and PinGroups",
     },

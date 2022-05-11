@@ -13,13 +13,20 @@ import { DemoFlexyModule } from './demo-flexy-module'
 // Modules
 import { CreatePinCodeComponent } from './component/create-pincode/create-pincode.component';
 import { CreatePinCodeSerialComponent } from './component/create-pincode-serial/create-pincode-serial.component';
+import { ActivatePincodeComponent } from './component/activate-pincode/activate-pincode.component';
+import { GetPincodeListComponent } from './component/get-pincode-list/get-pincode-list.component';
+import { UpdatePincodeComponent } from './component/get-pincode-list/update-pincode/update-pincode.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
     CreatePinCodeComponent,
-    CreatePinCodeSerialComponent
+    CreatePinCodeSerialComponent,
+    ActivatePincodeComponent,
+    GetPincodeListComponent,
+    UpdatePincodeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,9 @@ import { CreatePinCodeSerialComponent } from './component/create-pincode-serial/
     BrowserAnimationsModule,
     FeatherModule.pick(allIcons),
     DemoFlexyModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
