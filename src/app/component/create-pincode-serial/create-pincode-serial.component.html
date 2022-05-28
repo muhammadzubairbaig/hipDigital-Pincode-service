@@ -3,6 +3,15 @@
   <div class="card-body">
     <h4 class="mb-32">Create Pincode</h4>
     <form>
+
+      <section class="fs-16 mb-32">
+        <!-- <mat-label>QA Pincode</mat-label> -->
+        <mat-checkbox color="primary" [checked]="markedasTestPincode" (change)="eventHandler($event)"
+          name="markedasTestPincode" class="d-block mb-16">
+          Marked as Test Pincode?</mat-checkbox>
+      </section>
+
+
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Pincode Quality</mat-label>
         <input matInput type="text" value="Nirav Joshi" placeholder="Enter your pincode Quality" name="pincodeQuality"
@@ -24,8 +33,9 @@
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Site</mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+                        <mat-option *ngFor="let type of siteOptions" [value]="type.value">
+
+            {{type.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -54,18 +64,29 @@
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Pin Type</mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+                        <mat-option *ngFor="let type of siteOptions" [value]="type.value">
+
+            {{type.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <ng-container *ngIf="markedasTestPincode">
 
-      <section class="fs-16 mb-32">
-          <mat-label>QA Pincode</mat-label>
-        <mat-checkbox color="primary" [checked]="markedasTestPincode" name="markedasTestPincode" class="d-block mb-16">
-          Marked as Test Pincode?</mat-checkbox>
-        </section>
+        <mat-form-field class="w-100 fs-16" appearance="outline">
+          <mat-label>Price Per Pin Batch</mat-label>
+          <input matInput type="text" [(ngModel)]="pricePerPinBatch" name="pricePerPinBatch">
+        </mat-form-field>
 
+        <mat-form-field class="w-100 fs-16" appearance="outline">
+          <mat-label>Sale Price For Batch</mat-label>
+          <input matInput type="text" [(ngModel)]="priceForBatch" name="priceForBatch">
+        </mat-form-field>
+
+        <mat-form-field class="w-100 fs-16" appearance="outline">
+          <mat-label>Invoice Number</mat-label>
+          <input matInput type="text" [(ngModel)]="invoiceNumber" name="invoiceNumber">
+        </mat-form-field>
+      </ng-container>
 
       <button mat-button class="btn btn-primary fw-normal" (click)="onSubmit()" type="submit">Submit</button>
     </form>

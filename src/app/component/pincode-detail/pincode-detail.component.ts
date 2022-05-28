@@ -1,13 +1,37 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+export interface PeriodicElement {
+  id: number;
+  name: string;
+  work: string;
+  project: string;
+  priority: string;
+  selectedList: boolean;
+  budget:string
+  actions1: string;
+  actions2: string;
+  actions3: string;
+  actions4: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  { id: 1, name: 'test', work: '10', project: '3', priority: '2/22/2008 12:32:22 PM', selectedList: false, budget: '21',actions1: '21',actions2: '21',actions3: '21',actions4: '21' },
+  // { id: 2, name: 'test 2', work: '10', project: '3', priority: '2/22/2008 12:32:22 PM', selectedList: false, budget: '21' },
+];
+import { faDownload, faEdit, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
-  selector: 'create-pincode-serial',
-  templateUrl: './create-pincode-serial.component.html',
-})
-export class CreatePinCodeSerialComponent implements OnInit {
-
-  checked = true;
+  selector: 'pincode-detail',
+  templateUrl: './pincode-detail.component.html',
+  styleUrls: ['./pincode-detail.component.scss']
+}) 
+export class PincodeDetailComponent implements OnInit {
+  searchIcon = faSearch;
+  plusIcon = faPlus;
+  editIcon= faEdit;
+  downloadIcon=faDownload;
+  selectedList = false;
   pincodeQuality = '';
   startSerialNum = '';
   downloadPerPincode = '';
@@ -16,9 +40,7 @@ export class CreatePinCodeSerialComponent implements OnInit {
   markedasTestPincode = false;
   startDate = new Date();
   endDate = new Date();
-  pricePerPinBatch='';
-  priceForBatch='';
-  invoiceNumber='';
+  searchPincode = '';
   siteOptions: any[] = [
 	{  value: "-1", viewValue:'- select site -'},
 	{  value: "14021", viewValue:'3MStore'},
@@ -266,7 +288,11 @@ export class CreatePinCodeSerialComponent implements OnInit {
 	{  value: "11", viewValue:'www.sprintbbstylegiveaway.com'},
 	{  value: "739", viewValue:'zoneperfect.snipprewards.com'},
   ]
-  constructor(private _router: Router,) { }
+  displayedColumns: string[] = [ 'id','pincode', 'type', 'createdDate', 'orignalDownload', 'remainingDonwload','startDate','expiryDate','isQaPin','isDeleted','redemptionDate','expired','isRefunded','promotion','childSiteName','pincodeGroupName'];
+  dataSource = ELEMENT_DATA;
+  
+  pincodeList: string[] = [];
+  constructor(private _router: Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -276,30 +302,43 @@ export class CreatePinCodeSerialComponent implements OnInit {
     this._router.navigate(['/flexy/home']);
   }
 
-  eventHandler(e?: any) {
-    this.markedasTestPincode=e.checked;
-    console.log(e,this.markedasTestPincode)
-    // this.markedasTestPincode
-  }
-
   reset() {
     this.pincodeQuality = '';
   }
 
   onSubmit() {
-    let body = {
-      checked: true,
-      pincodeQuality: this.pincodeQuality,
-      startSerialNum: this.startSerialNum,
-      downloadPerPincode: this.downloadPerPincode,
-      pincodeGroupName: this.pincodeGroupName,
-      characterQuality: this.characterQuality,
-      markedasTestPincode: false,
-      startDate: new Date(),
-      endDate: new Date(),
-    }
 
-    console.log(body)
-    this.reset();
+    // let body = {
+    //   checked: true,
+    //   pincodeQuality: this.pincodeQuality,
+    //   startSerialNum: this.startSerialNum,
+    //   downloadPerPincode: this.downloadPerPincode,
+    //   pincodeGroupName: this.pincodeGroupName,
+    //   characterQuality: this.characterQuality,
+    //   markedasTestPincode: false,
+    //   startDate: new Date(),
+    //   endDate: new Date(),
+    // }
+
+    // console.log(body)
+    // this.reset();
   }
+
+  onSearchPincode() {
+    let response = 'true';
+    this.pincodeList.push(response);
+  }
+
+  onEditPincode(element:any){
+  
+  }
+
+  onDownloadPincode(element?:any){
+
+  }
+
+  setAll(completed: boolean, element?: any) {
+    this.dataSource.filter(t => (t.id == element.id))[0].selectedList = completed;
+  }
+
 }

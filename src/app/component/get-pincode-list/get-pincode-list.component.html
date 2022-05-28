@@ -108,8 +108,9 @@
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Site</mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+                        <mat-option *ngFor="let type of siteOptions" [value]="type.value">
+
+            {{type.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -117,8 +118,9 @@
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Promotions</mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+                        <mat-option *ngFor="let type of siteOptions" [value]="type.value">
+
+            {{type.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -144,8 +146,9 @@
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Distribution Method </mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+                        <mat-option *ngFor="let type of siteOptions" [value]="type.value">
+
+            {{type.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -159,8 +162,9 @@
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Project Type </mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+                        <mat-option *ngFor="let type of siteOptions" [value]="type.value">
+
+            {{type.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -173,8 +177,9 @@
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Content Cost </mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+                        <mat-option *ngFor="let type of siteOptions" [value]="type.value">
+
+            {{type.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>

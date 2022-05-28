@@ -1,9 +1,10 @@
 <!-- Form Layout -->
-<div class="" *ngIf="pincode">
+<div class="" *ngIf="pincode ">
   <div class="">
     <div class="row">
       <div class="col-6">
-        <h4 class="mb-32">Update Pincode {{pincode.id}}</h4>
+        <h4 class="mb-32" *ngIf="data.isOpenFrom !== 'custom'">Update Pincode {{pincode.id}}</h4>
+        <h4 class="mb-32" *ngIf="data.isOpenFrom === 'custom'">Pin code ingestion progress</h4>
       </div>
       <div class="col-6 d-flex justify-content-end">
         <button (click)="closeDialog()" class="btn-no">
@@ -12,7 +13,7 @@
       </div>
 
     </div>
-    <form>
+    <form *ngIf="data.isOpenFrom !== 'custom'">
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Site</mat-label>
         <input matInput type="text" value="Nirav Joshi" placeholder="Serial Number" name="pincodeQuality" readonly>
@@ -52,20 +53,64 @@
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Pin Type</mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+          <mat-option *ngFor="let type of siteOptions" [value]="type.value">
+
+            {{type.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
-    <div class="row">
-      <div class="col-8"></div>
-      <div class="col-4 d-flex justify-content-end">
-        <!-- <button mat-button class="btn btn-secondary fw-normal m-right-3" (click)="onSubmit()" type="submit">Cancel</button> -->
-        <button mat-button mat-dialog-close (click)="onSubmit()" >Cancel</button>
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4 d-flex justify-content-end">
+          <!-- <button mat-button class="btn btn-secondary fw-normal m-right-3" (click)="onSubmit()" type="submit">Cancel</button> -->
+          <button mat-button mat-dialog-close (click)="onSubmit()">Cancel</button>
 
-        <button mat-button class="btn btn-primary fw-normal" (click)="onSubmit()" type="submit">Submit</button>
+          <button mat-button class="btn btn-primary fw-normal" (click)="onSubmit()" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="data.isOpenFrom === 'custom'">
+      <div class="row">
+        <div class="col-12">
+          <table mat-table [dataSource]="dataSource" class="text-nowrap w-100">
+
+            <!-- Id Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> File Name </th>
+              <td mat-cell *matCellDef="let element">
+                <p class="mb-0 fw-medium">{{ element.id }}</p>
+              </td>
+            </ng-container>
+  
+            <!-- Assigned Column -->
+            <ng-container matColumnDef="assigned">
+              <th mat-header-cell *matHeaderCellDef> Pine group </th>
+              <td mat-cell *matCellDef="let element">
+                <p class="mb-0 fw-medium">{{ element.assigned }}</p>
+              </td>
+            </ng-container>
+  
+            <!-- Project Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Status</th>
+              <td mat-cell *matCellDef="let element">
+                <p class="mb-0 fw-medium op-5">{{element.name}}</p>
+              </td>
+            </ng-container>
+  
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+        <div class="col-12 mt-3">
+          Failed to create a pin group for file
+          E:\HipWeb\wwwroot\BulkPincodeUpload\Staging\US\Upload\TestSitePins2_444_200.txt: CreatePinGroup - Duplicate
+          name. That name is already in use. Select another pinCode group name and try again
+
+        </div>
       </div>
     </div>
-    </form>
+
   </div>
 </div>

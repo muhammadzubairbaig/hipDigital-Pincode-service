@@ -11,22 +11,24 @@ import { FullComponent } from './layouts/full/full.component';
 import { DemoFlexyModule } from './demo-flexy-module'
 
 // Modules
-import { CreatePinCodeComponent } from './component/create-pincode/create-pincode.component';
 import { CreatePinCodeSerialComponent } from './component/create-pincode-serial/create-pincode-serial.component';
 import { ActivatePincodeComponent } from './component/activate-pincode/activate-pincode.component';
 import { GetPincodeListComponent } from './component/get-pincode-list/get-pincode-list.component';
 import { UpdatePincodeComponent } from './component/get-pincode-list/update-pincode/update-pincode.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { PincodeDetailComponent } from './component/pincode-detail/pincode-detail.component';
+import { CustomPincodeComponent } from './component/custom-pincode/custom-pincode.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
-    CreatePinCodeComponent,
     CreatePinCodeSerialComponent,
     ActivatePincodeComponent,
     GetPincodeListComponent,
-    UpdatePincodeComponent
+    UpdatePincodeComponent,
+    PincodeDetailComponent,
+    CustomPincodeComponent
   ],
   imports: [
     BrowserModule,

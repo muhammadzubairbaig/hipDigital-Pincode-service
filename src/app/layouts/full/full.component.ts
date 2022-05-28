@@ -29,33 +29,33 @@ export class FullComponent {
   routerActive: string = "activelink";
 
   sidebarMenu: sidebarMenu[] = [
+    // {
+    //   link: "/pincode",
+    //   icon: "disc",
+    //   menu: "Pincode",
+    // },
     {
-      link: "/pincode",
+      link: "/create-pincode-serial",
       icon: "disc",
       menu: "Pincode",
     },
     {
-      link: "/create-pincode-serial",
-      icon: "disc",
-      menu: "Create Pincode with Serial Number",
-    },
-    {
       link: "/activate-pincode",
       icon: "info",
-      menu: "Activate Pincode with Serial Number",
+      menu: "Activate Pincode",
     },
     {
       link: "/get-pincode-list",
       icon: "file-text",
-      menu: "Promotion and PinGroups",
+      menu: "Mangage Promotion",
     },
     {
-      link: "/menu",
+      link: "/pincode-detail",
       icon: "menu",
       menu: "Pincode Validation",
     },
     {
-      link: "/table",
+      link: "/custom-pincode",
       icon: "grid",
       menu: "Custom Pincode Ingestion",
     },
