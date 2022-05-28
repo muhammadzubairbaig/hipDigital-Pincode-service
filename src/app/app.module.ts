@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FullComponent } from './layouts/full/full.component';
-import { DemoFlexyModule } from './demo-flexy-module'
+import { MaterialModule } from './material-module'
 
 // Modules
 import { CreatePinCodeSerialComponent } from './component/create-pincode-serial/create-pincode-serial.component';
@@ -18,6 +18,8 @@ import { UpdatePincodeComponent } from './component/get-pincode-list/update-pinc
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { PincodeDetailComponent } from './component/pincode-detail/pincode-detail.component';
 import { CustomPincodeComponent } from './component/custom-pincode/custom-pincode.component';
+import { ChildSitePromotionsComponent } from './component/childsite-promotions/childsite-promotions.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -28,17 +30,19 @@ import { CustomPincodeComponent } from './component/custom-pincode/custom-pincod
     GetPincodeListComponent,
     UpdatePincodeComponent,
     PincodeDetailComponent,
-    CustomPincodeComponent
+    CustomPincodeComponent,
+    ChildSitePromotionsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FeatherModule.pick(allIcons),
-    DemoFlexyModule,
-    FormsModule,
+    MaterialModule,
+    FormsModule,  
+    DragDropModule,
     FontAwesomeModule
-    
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -36,44 +36,34 @@ export class FullComponent {
     // },
     {
       link: "/create-pincode-serial",
-      icon: "disc",
+      icon: "map-pin",
       menu: "Pincode",
     },
     {
       link: "/activate-pincode",
-      icon: "info",
+      icon: "map-pin",
       menu: "Activate Pincode",
     },
     {
       link: "/get-pincode-list",
-      icon: "file-text",
+      icon: "list",
       menu: "Mangage Promotion",
     },
     {
       link: "/pincode-detail",
-      icon: "menu",
+      icon: "book-open",
       menu: "Pincode Validation",
     },
     {
       link: "/custom-pincode",
-      icon: "grid",
-      menu: "Custom Pincode Ingestion",
+      icon: "pen-tool",
+      menu: "Pincode Ingestion",
     },
     {
-      link: "/expansion",
-      icon: "divide-circle",
-      menu: "Manage Childsite Promotions",
-    },
-    {
-      link: "/table",
-      icon: "award",
-      menu: "Table",
-    },
-    // {
-    //   link: "/forms",
-    //   icon: "list",
-    //   menu: "Forms",
-    // },
+      link: "/childsite-promotions",
+      icon: "file-text",
+      menu: "Childsite Promotions",
+    }
   ]
 
 }

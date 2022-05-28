@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActivatePincodeComponent } from './component/activate-pincode/activate-pincode.component';
+import { ChildSitePromotionsComponent } from './component/childsite-promotions/childsite-promotions.component';
 import { CreatePinCodeSerialComponent } from './component/create-pincode-serial/create-pincode-serial.component';
 import { CustomPincodeComponent } from './component/custom-pincode/custom-pincode.component';
 import { GetPincodeListComponent } from './component/get-pincode-list/get-pincode-list.component';
@@ -20,6 +21,9 @@ const routes: Routes = [
       { path: "get-pincode-list/:id", component: UpdatePincodeComponent},
       { path: "pincode-detail", component: PincodeDetailComponent},
       { path: "custom-pincode", component: CustomPincodeComponent},
+      { path: "childsite-promotions", component: ChildSitePromotionsComponent},
+
+      
       
     ]
   },

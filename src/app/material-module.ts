@@ -101,5 +101,5 @@
          FlexLayoutModule,
      ]
  })
- export class DemoFlexyModule { }
+ export class MaterialModule { }
  
