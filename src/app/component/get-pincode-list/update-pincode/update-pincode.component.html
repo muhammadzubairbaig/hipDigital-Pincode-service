@@ -1,10 +1,10 @@
 <!-- Form Layout -->
-<div class="" *ngIf="pincode ">
+<div class="" *ngIf="pincode">
   <div class="">
     <div class="row">
       <div class="col-6">
-        <h4 class="mb-32" *ngIf="data.isOpenFrom !== 'custom'">Update Pincode {{pincode.id}}</h4>
-        <h4 class="mb-32" *ngIf="data.isOpenFrom === 'custom'">Pin code ingestion progress</h4>
+        <h4 class="mb-32" *ngIf="!data">Update Pincode {{pincode.id}}</h4>
+        <h4 class="mb-32" *ngIf="data && data.isOpenFrom === 'custom'">Pin code ingestion progress</h4>
       </div>
       <div class="col-6 d-flex justify-content-end">
         <button (click)="closeDialog()" class="btn-no">
@@ -13,7 +13,7 @@
       </div>
 
     </div>
-    <form *ngIf="data.isOpenFrom !== 'custom'">
+    <form *ngIf="!data">
       <mat-form-field class="w-100 fs-16" appearance="outline">
         <mat-label>Site</mat-label>
         <input matInput type="text" value="Nirav Joshi" placeholder="Serial Number" name="pincodeQuality" readonly>
@@ -69,7 +69,7 @@
         </div>
       </div>
     </form>
-    <div *ngIf="data.isOpenFrom === 'custom'">
+    <div *ngIf="data && data.isOpenFrom === 'custom'">
       <div class="row">
         <div class="col-12">
           <table mat-table [dataSource]="dataSource" class="text-nowrap w-100">
